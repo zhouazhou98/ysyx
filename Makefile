@@ -1,5 +1,5 @@
 STUID = ysyx_22040000
-STUNAME = 周岩瑾
+STUNAME = 周岩瑾 # my name
 
 # DO NOT modify the following code!!!
 
