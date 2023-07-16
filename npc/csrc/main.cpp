@@ -7,7 +7,7 @@
 
 int main(int argc, char ** argv) {
 	// heap 上分配 VerilatedContex
-	VerilatedContext * context_p = new VerilatedContex;
+	VerilatedContext * context_p = new VerilatedContext;
 	context_p->commandArgs(argc, argv);
 
 	// heap 上分配 Vtop
