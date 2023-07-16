@@ -20,7 +20,7 @@ int main(int argc, char ** argv) {
 
 		top_p->a = a;
 		top_p->b = b;
-		top_p->evil();
+		top_p->eval();
 		assert(top_p->f == (a^b) );
 		context_p->timeInc(1);
 	}
