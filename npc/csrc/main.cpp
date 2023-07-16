@@ -14,7 +14,7 @@ int main(int argc, char ** argv) {
 	Vtop * top_p = new Vtop{context_p};
 
 	int i = 0;
-	while ( i < 100000 ) {
+	while ( ++i < 100000 ) {
 		int a = rand() & 1;
 		int b = rand() & 1;
 
