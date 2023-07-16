@@ -25,5 +25,9 @@ int main(int argc, char ** argv) {
 		context_p->timeInc(1);
 	}
 	
+
+	delete top_p;
+	delete context_p;
+
 	return 0;
 }
