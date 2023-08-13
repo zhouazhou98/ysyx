@@ -10,5 +10,3 @@
 !.gitignore
 !README.md
 build/
-*obj_dir*
-*profile_exec.*
