@@ -14,7 +14,7 @@
 #**************************************************************************************/
 
 # Sanity check 检查文件是否存在
-# NEMU_ZHOU_HOME=.
+NEMU_ZHOU_HOME=.
 ifeq ($(wildcard $(NEMU_ZHOU_HOME)/src/nemu-main.c),)
   $(error NEMU_ZHOU_HOME=$(NEMU_ZHOU_HOME) is not a NEMU repo)
 endif
