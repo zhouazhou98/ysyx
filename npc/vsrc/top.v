@@ -4,6 +4,10 @@ module top (
 	output wire [31:0] rd,
 );
 
-addi m_addi ( .src (src), .imm (imm), .rd (rd) );
+addi m_addi ( 
+	.src (src), 
+	.imm (imm), 
+	.rd (rd) 
+);
 
 endmodule
