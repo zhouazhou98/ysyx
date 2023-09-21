@@ -10,7 +10,7 @@ BUILD_DIR = ./build
 OBJ_DIR = $(BUILD_DIR)/obj_dir
 BIN = $(BUILD_DIR)/$(TOPNAME)
 
-default: $(BIN)
+default: compile_git $(BIN)
 
 $(shell mkdir -p $(BUILD_DIR))
 
@@ -33,7 +33,7 @@ CFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
 LDFLAGS += # -lSDL2 -lSDL2_image
 
 
-$(BIN): compile_git $(VSRCS) $(CSRCS) # $(NVBOARD_ARCHIVE)
+$(BIN): $(VSRCS) $(CSRCS) # $(NVBOARD_ARCHIVE)
 	@rm -rf $(OBJ_DIR)
 	$(VERILATOR) $(VERILATOR_CFLAGS) \
 		--top-module $(TOPNAME) $^ \
@@ -47,7 +47,7 @@ compile_git:
 
 all: default
 
-run: $(BIN)
+run: compile_git $(BIN)
 	@$^
 
 clean:
