@@ -40,15 +40,15 @@ $(BIN): $(VSRCS) $(CSRCS) # $(NVBOARD_ARCHIVE)
 		$(addprefix -CFLAGS , $(CFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) \
 		--Mdir $(OBJ_DIR) --exe -o $(abspath $(BIN))
 
--include $(NEMU_ZHOU_HOME)/../Makefile
-compile_git:
-	$(call git_commit, "compile NPC")
-
-
 all: default
 
 run: compile_git $(BIN)
 	@$^
+
+-include $(NEMU_ZHOU_HOME)/../Makefile
+compile_git:
+	$(call git_commit, "compile NPC")
+
 
 clean:
 	rm -rf $(BUILD_DIR)
