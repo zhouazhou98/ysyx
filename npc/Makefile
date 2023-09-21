@@ -35,7 +35,7 @@ LDFLAGS += # -lSDL2 -lSDL2_image
 
 -include $(NEMU_ZHOU_HOME)/../Makefile
 compile_git:
-	$(call git_commit, "compile NEMU-ZHOU")
+	$(call git_commit, "compile NPC")
 
 
 $(BIN): compile_git $(VSRCS) $(CSRCS) # $(NVBOARD_ARCHIVE)
