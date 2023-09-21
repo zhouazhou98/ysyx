@@ -42,8 +42,8 @@ $(BIN): $(VSRCS) $(CSRCS) # $(NVBOARD_ARCHIVE)
 
 all: default
 
-run: compile_git $(BIN)
-	@$^
+run: $(BIN) compile_git 
+	@$(BIN)
 
 -include $(NEMU_ZHOU_HOME)/../Makefile
 compile_git:
