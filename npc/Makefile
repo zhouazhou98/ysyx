@@ -33,17 +33,17 @@ CFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
 LDFLAGS += # -lSDL2 -lSDL2_image
 
 
--include $(NEMU_ZHOU_HOME)/../Makefile
-compile_git:
-	$(call git_commit, "compile NPC")
-
-
 $(BIN): compile_git $(VSRCS) $(CSRCS) # $(NVBOARD_ARCHIVE)
 	@rm -rf $(OBJ_DIR)
 	$(VERILATOR) $(VERILATOR_CFLAGS) \
 		--top-module $(TOPNAME) $^ \
 		$(addprefix -CFLAGS , $(CFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) \
 		--Mdir $(OBJ_DIR) --exe -o $(abspath $(BIN))
+
+-include $(NEMU_ZHOU_HOME)/../Makefile
+compile_git:
+	$(call git_commit, "compile NPC")
+
 
 all: default
 
