@@ -47,7 +47,7 @@ run: $(BIN) compile_git
 
 -include $(NEMU_ZHOU_HOME)/../Makefile
 compile_git:
-	$(call git_commit, "compile NPC")
+	$(call git_commit, "compile or run NPC")
 
 
 clean:
