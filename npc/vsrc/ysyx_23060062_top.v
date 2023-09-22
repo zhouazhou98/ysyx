@@ -4,7 +4,7 @@ module top (
 	output wire [31:0] rd
 );
 
-addi m_addi ( 
+ysyx_23060062_addi m_addi ( 
 	.src (src), 
 	.imm (imm), 
 	.rd (rd) 
