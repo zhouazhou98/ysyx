@@ -1,5 +1,6 @@
 module ysyx_23060062_top (
 	input clk,
+
 	// 通用寄存器 x0 ~ x31
 	input wire [4:0] regs,
 	input wire reg_read,
@@ -31,11 +32,17 @@ module ysyx_23060062_top (
 //	到来时 将数据写入，那如果数据还没有给到呢？可能会向 MM 中写入错误的值
 //	因此需要：给数据， 给 PC， 给信号， 等待时钟信号
 
+
+
+
 // 0. 定义寄存器
 // TODO:
 // 	按理说寄存器这样写不太对吧，尤其是对于 x0 来说，其变成了非固定的
 // 	不过这里先暂时这样了 - 为了尽快完成构思
 reg [31:0] pc;
+
+// 用来存放当前正在译码的指令
+reg [31:0] inst;
 
 // TODO: 这里还是用子文件来实现通用寄存器比较好，给个写入读出接口即可
 // 	其实这里可以直接给 rd，不用在指令判断 type 时译码了，还简单省事
@@ -46,9 +53,6 @@ ysyx_23060062_regs regs (
 	input wire [31:0] reg_write,
 	output wire [31:0] reg_read
 );
-
-// 用来存放当前正在译码的指令
-reg [31:0] inst;
 
 // 1. 取指令
 ysyx_23060062_inst_fetch ifetch (
@@ -95,6 +99,7 @@ ysyx_23060062_inst_type_decode type_decode (
 // 	时，所有的 type 都在对指令进行类型译码操作，最后根据译码器 32 位输出在
 // 	 6 种类型中选择？
 // 可以再接个 100 根左右的线，作为指令的使能端，输出
+// alu
 ysyx_23060062_inst_inst_exec_decode inst_exec_decode (
 	.inst (inst[31:0]),
 	.memory_op (memory_op),
