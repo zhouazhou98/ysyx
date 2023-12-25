@@ -12,7 +12,8 @@ ysyx_23060062_addi m_addi (
 	.imm (imm), 
 	.rd (rd) 
 );
-
-print();
+always@(*) begin
+	print();
+end
 
 endmodule
