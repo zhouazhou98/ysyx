@@ -3,10 +3,10 @@ STUNAME = 周岩瑾 # my name
 
 # DO NOT modify the following code!!!
 
-TRACER = tracer-ysyx
+TRACER = tracer-ysyx-nemu-zhou
 GITFLAGS = -q --author='$(TRACER) <tracer@ysyx.org>' --no-verify --allow-empty
 
-YSYX_HOME = $(NEMU_HOME)/..
+YSYX_HOME = $(NEMU_ZHOU_HOME)/..
 WORK_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 WORK_INDEX = $(YSYX_HOME)/.git/index.$(WORK_BRANCH)
 TRACER_BRANCH = $(TRACER)

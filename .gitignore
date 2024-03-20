@@ -1,6 +1,8 @@
 *.*
 *
 !*/
+!/nvboard/*
+!/nemu-zhou/*
 !/nemu/*
 !/nexus-am/*
 !/nanos-lite/*
